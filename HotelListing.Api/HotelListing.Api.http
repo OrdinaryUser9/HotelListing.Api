@@ -1,7 +1,43 @@
 @HotelListing.Api_HostAddress = https://localhost:7233
  
+GET {{HotelListing.Api_HostAddress}}/api/countries
+
+###
+POST {{HotelListing.Api_HostAddress}}/api/countries
+Content-Type: application/json
+
+{
+  "name": "Azerbaijan",
+  "shortName": "AZ"
+}
+
+###
+
+DELETE {{HotelListing.Api_HostAddress}}/api/countries/{{id}}
+
+###
+GET {{HotelListing.Api_HostAddress}}/api/countries/{{id}}
+ 
+###
+
+
+PUT {{HotelListing.Api_HostAddress}}/api/countries/{{id}}
+Content-Type: application/json
+
+{
+  "id": 1004,
+  "name": "England",
+  "shortName": "EN"
+}
+
+###
+
+
+
+
+
+
 GET {{HotelListing.Api_HostAddress}}/api/hotels
-Accept: application/json
 
 ###
 
@@ -9,15 +45,13 @@ POST {{HotelListing.Api_HostAddress}}/api/hotels
 Content-Type: application/json
 
 {
-    "id": 3,
-    "name": "New Hotel",
-    "address": "89 Azadliq Av",
-    "rating": 3.4
+  "name": "Hamoton",
+  "address": "Rogojskiy Val St 10",
+  "rating": 4.6,
+  "countryId": 1003
 }
 
 ###
-
-@id=3
 DELETE {{HotelListing.Api_HostAddress}}/api/hotels/{{id}}
 
 ###
@@ -30,10 +64,17 @@ PUT {{HotelListing.Api_HostAddress}}/api/hotels/{{id}}
 Content-Type: application/json
 
 {
-    "id": 3,
-    "name": "Changed The Name",
-    "address": "89 Azadliq Av",
-    "rating": 3.4
+  "id": 1007,
+  "name": "Hampton",
+  "address": "Rogojskiy Val St 10",
+  "rating": 4.6,
+  "countryId": 1003
 }
 
 ###
+
+
+
+
+
+@id = 1005
